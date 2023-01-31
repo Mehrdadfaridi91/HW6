@@ -18,7 +18,7 @@ namespace HW6
                 lastUser = users[users.Count - 1];
             }
             User newUser = new();
-            newUser.Id = lastUser.Id;
+            newUser.Id = lastUser.Id + 1;
             if (lastUser.Id == 0)
             {
                 newUser.Id = 1;
@@ -73,7 +73,7 @@ namespace HW6
                 File.WriteAllText(path, string.Empty);
                 foreach (var item in users)
                 {
-                    if (user.Id == id)
+                    if (user.Id == item.Id)
                     {
                         Create(inputUser);
                     }
